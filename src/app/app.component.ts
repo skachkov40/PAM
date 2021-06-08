@@ -22,8 +22,9 @@ export class AppComponent implements OnInit {
   this.httpService.getLine().subscribe((data:any) => this.strs=data['UserList']);
   }
 
-highlight(row){
+  highlight(row){
   this.selectedRowIndex=row.position;
+  console.log(row);
   }
 
 }

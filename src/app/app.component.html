@@ -36,7 +36,8 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="highlight(row)" [ngClass]="{'highlightTableColor': selectedRowIndex == row.position}"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="
+        highlight(row)" [ngClass]="{'highlightTableColor': selectedRowIndex == row.position}"></tr>
     </table>
 </div>
 <div class="li">
