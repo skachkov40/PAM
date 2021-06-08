@@ -10,16 +10,25 @@ import { MsgService } from './msg.service';
 export class AppComponent implements OnInit {
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  showTable:any = false;
+  showTable:any = true;
+  selectedRowIndex:any;
 
   strs: Str[]=[];
 
   constructor(private httpService: MsgService){}
 
+
   ngOnInit(){
   this.httpService.getLine().subscribe((data:any) => this.strs=data['UserList']);
   }
+
+highlight(row){
+  this.selectedRowIndex=row.position;
+  }
+
 }
+
+
 
 export interface PeriodicElement {
   name: string;
