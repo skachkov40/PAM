@@ -10,9 +10,9 @@ import { MsgService } from './msg.service';
 export class AppComponent implements OnInit {
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  showTable:any = true;
+  showTable:any = false;
   selectedRowIndex:any;
-
+  data1:any = "кое какой техт+\r\nперенос строки";
   strs: Str[]=[];
 
   constructor(private httpService: MsgService){}
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   this.httpService.getLine().subscribe((data:any) => this.strs=data['UserList']);
   }
 
-  highlight(row){
+  clickRow(row:any){
   this.selectedRowIndex=row.position;
   console.log(row);
   }
@@ -39,7 +39,7 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 1, name: "Hydfvsdfbvcrtcg<br>ro/r/ngen", weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
   {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},

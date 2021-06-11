@@ -1,0 +1,5 @@
+{
+    "php.executablePath": "C:/Server/bin/PHP",
+    "php.validate.run": "onType",
+    "php.suggest.basic": false
+}

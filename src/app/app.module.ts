@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,14 +9,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { MsgService } from './msg.service';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule} from '@angular/material/table';
 import { HttpClientModule }   from '@angular/common/http';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    FormsModule,
+    TextFieldModule,
+    MatInputModule,
+    MatSidenavModule,
     MatTableModule,
     HttpClientModule,
     MatSliderModule,
@@ -25,6 +33,7 @@ import { HttpClientModule }   from '@angular/common/http';
     BrowserAnimationsModule,
     MatIconModule,
     MatToolbarModule
+
   ],
   providers: [
     MsgService
